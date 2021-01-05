@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/skillsSection/components/skillCard.dart';
+import 'package:portfolio/projects/components/projectCard.dart';
 
-class Skills extends StatelessWidget {
-  const Skills({Key key}) : super(key: key);
+class Projects extends StatelessWidget {
+  const Projects({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +12,13 @@ class Skills extends StatelessWidget {
           horizontal: mQ.width * .10, vertical: mQ.height * .05),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
         children: [
           Container(
             width: mQ.width * .8,
             alignment: Alignment.centerLeft,
             child: Text(
-              'My Skills',
+              'Projects',
               style: TextStyle(
                 fontSize: 40,
               ),
@@ -28,14 +29,12 @@ class Skills extends StatelessWidget {
           ),
           Flex(
             direction: Axis.horizontal,
+            mainAxisSize: MainAxisSize.max,
             children: [
-              SkillCard(),
-              SkillCard(),
-              SkillCard(),
-              SkillCard(),
-              SkillCard()
+              ProjectCard(imagePath: 'assets/images/bg.jpg',),
+              ProjectCard(imagePath: 'assets/images/profilePicture.png',),
             ],
-          )
+          ),
         ],
       ),
     );

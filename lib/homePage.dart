@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:portfolio/aboutMeSection/aboutMeSeaction.dart';
 import 'package:portfolio/mainSection/mainSection.dart';
+import 'package:portfolio/projects/projectsSection.dart';
 import 'package:portfolio/skillsSection/skillsSection.dart';
 
 class HomePage extends StatelessWidget {
@@ -19,7 +20,8 @@ class HomePage extends StatelessWidget {
           children: [
             MainSection(),
             AboutMe(),
-            SkillSeaction(),
+            Skills(),
+            Projects()
           ],
         ),
       ),

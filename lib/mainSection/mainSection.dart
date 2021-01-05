@@ -50,7 +50,7 @@ class MainSection extends StatelessWidget {
                 ),
                 SizedBox(height: 15,),
                 Text(
-                  "And i'm machine leaning and flutter developer",
+                  "And i'm machine learning and flutter developer",
                   style: TextStyle(
                     fontSize: 30,
                     color: Colors.white,
