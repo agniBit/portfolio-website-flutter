@@ -14,7 +14,6 @@ class _SkillCardState extends State<SkillCard> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
-    print('build');
     return Expanded(
       child: InkWell(
         onTap: () {},

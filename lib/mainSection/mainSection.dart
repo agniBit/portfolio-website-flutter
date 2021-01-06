@@ -21,7 +21,7 @@ class MainSection extends StatelessWidget {
             bottom: 0,
             right: mQ.width * .10,
             child: Image.asset(
-              'assets/images/profilePicture.png',
+              'assets/images/pic_0.png',
               fit: BoxFit.cover,
               height: mQ.height * .85,
             ),
