@@ -66,6 +66,9 @@ class _ProjectCardState extends State<ProjectCard> {
                   child: Container(
                     alignment: Alignment.center,
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
                         Text('Project Name'),
                         Text('Project type'),

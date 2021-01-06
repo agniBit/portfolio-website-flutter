@@ -28,12 +28,61 @@ class Skills extends StatelessWidget {
           ),
           Flex(
             direction: Axis.horizontal,
+            mainAxisSize: MainAxisSize.max,
             children: [
-              SkillCard(),
-              SkillCard(),
-              SkillCard(),
-              SkillCard(),
-              SkillCard()
+              SkillCard(
+                iconBgColor: Colors.yellow[100],
+                skillName: 'Machine Learning',
+                skillLevel: .9,
+                bgColor: Colors.lightGreen,
+                percentIndicatorColor: Colors.deepOrange,
+                imageName: 'assets/images/github.png',
+              ),
+              SkillCard(
+                iconBgColor: Colors.yellow[100],
+                skillName: 'Flutter Android/ios\napp development',
+                skillLevel: .8,
+                bgColor: Colors.lightGreen,
+                percentIndicatorColor: Colors.deepOrange,
+                imageName: 'assets/images/github.png',
+              ),
+              SkillCard(
+                iconBgColor: Colors.yellow[100],
+                skillName: 'NLP',
+                skillLevel: .8,
+                bgColor: Colors.lightGreen,
+                percentIndicatorColor: Colors.deepOrange,
+                imageName: 'assets/images/github.png',
+              ),
+            ],
+          ),
+          Flex(
+            direction: Axis.horizontal,
+            children: [
+              SkillCard(
+                iconBgColor: Colors.yellow[100],
+                skillName: 'ReactJS Web Development',
+                skillLevel: .9,
+                bgColor: Colors.lightGreen,
+                percentIndicatorColor: Colors.deepOrange,
+                imageName: 'assets/images/github.png',
+              ),
+              SkillCard(
+                iconBgColor: Colors.yellow[100],
+                skillName: 'NodeJS & Express\nBackend Development',
+                skillLevel: .9,
+                bgColor: Colors.lightGreen,
+                percentIndicatorColor: Colors.deepOrange,
+                imageName: 'assets/images/github.png',
+              ),
+              SkillCard(
+                iconBgColor: Colors.yellow[100],
+                skillName: 'GTK+3 cross platform\napp development',
+                skillLevel: .9,
+                bgColor: Colors.lightGreen,
+                percentIndicatorColor: Colors.deepOrange,
+                imageName: 'assets/images/github.png',
+              ),
             ],
           )
         ],

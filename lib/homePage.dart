@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/aboutMeSection/aboutMeSeaction.dart';
 import 'package:portfolio/contactME/contactMe.dart';
 import 'package:portfolio/customAppBar/customAppBar.dart';
+import 'package:portfolio/customBottumNavBar/CustomBottomNavBar.dart';
 import 'package:portfolio/mainSection/mainSection.dart';
 import 'package:portfolio/projects/projectsSection.dart';
 import 'package:portfolio/skillsSection/skillsSection.dart';
@@ -68,7 +69,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   AboutMe(),
                   Skills(),
                   Projects(),
-                  ContactMe()
+                  ContactMe(),
+                  CustomBottomNavBAr(),
                 ],
               ),
             ),

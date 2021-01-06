@@ -10,9 +10,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Porfolio Website',
-      // theme: ThemeData(
-      //   primarySwatch: Colors.deepPurple,
-      // ),
       home: HomePage(),
     );
   }
