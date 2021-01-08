@@ -1,14 +1,27 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class ProjectCard extends StatefulWidget {
   ProjectCard({
     Key key,
-    this.imagePath,
+    @required this.category,
+    @required this.date,
+    @required this.projectName,
+    @required this.descriptionPoints,
+    @required this.mediaLink,
+    @required this.githubLink,
+    this.imageFit,
   }) : super(key: key);
 
-  final String imagePath;
+  final String category;
+  final String date;
+  final String projectName;
+  final String descriptionPoints;
+  final String mediaLink;
+  final String githubLink;
+  final BoxFit imageFit;
 
   @override
   _ProjectCardState createState() => _ProjectCardState();
@@ -18,8 +31,27 @@ class _ProjectCardState extends State<ProjectCard> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 1,
+    var mQ = MediaQuery.of(context).size;
+    double _width;
+    if (MediaQuery.of(context).size.width >= 940) {
+      setState(() {
+        _width = MediaQuery.of(context).size.width * .39;
+      });
+    } else {
+      setState(() {
+        _width = MediaQuery.of(context).size.width * .8;
+      });
+    }
+    BoxFit fit;
+    // ignore: unrelated_type_equality_checks
+    if (widget.imageFit == null) {
+      print('cover');
+      fit = BoxFit.cover;
+    } else {
+      fit = widget.imageFit;
+    }
+    return Container(
+      width: _width,
       child: InkWell(
         onTap: () {},
         onHover: (value) {
@@ -56,8 +88,12 @@ class _ProjectCardState extends State<ProjectCard> {
                     borderRadius: BorderRadius.circular(10),
                     child: Container(
                       height: double.infinity,
+                      width: double.infinity,
                       color: Colors.orange,
-                      child: Image.asset(widget.imagePath),
+                      child: Image.asset(
+                        widget.mediaLink,
+                        fit: fit,
+                      ),
                     ),
                   ),
                 ),
@@ -70,9 +106,9 @@ class _ProjectCardState extends State<ProjectCard> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text('Project Name'),
-                        Text('Project type'),
-                        Text('Project decription'),
+                        Text('Project Name: ${widget.projectName}'),
+                        Text('Project type: ${widget.category} '),
+                        // Text('Project decription: ${widget.descriptionPoints}'),
                       ],
                     ),
                   ),
