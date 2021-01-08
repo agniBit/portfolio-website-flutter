@@ -54,6 +54,7 @@ class _SkillCardState extends State<SkillCard> {
           child: Column(
             children: [
               AnimatedContainer(
+                  clipBehavior: Clip.antiAlias,
                   duration: Duration(
                     milliseconds: 100,
                   ),
@@ -83,19 +84,29 @@ class _SkillCardState extends State<SkillCard> {
                     height: 100,
                   )),
               SizedBox(
-                height: 10,
+                height: 15,
               ),
-              LinearPercentIndicator(
-                lineHeight: 20.0,
-                percent: widget.skillLevel,
-                progressColor: widget.percentIndicatorColor,
+              Flex(
+                direction: Axis.horizontal,
+                children: [
+                  Expanded(flex:1,child: Container(),),
+                  Expanded(
+                    flex: 3,
+                    child: LinearPercentIndicator(
+                      lineHeight: 15.0,
+                      percent: widget.skillLevel,
+                      progressColor: widget.percentIndicatorColor,
+                    ),
+                  ),
+                  Expanded(flex:1,child: Container(),),
+                ],
               ),
               SizedBox(
-                height: 10,
+                height: 15,
               ),
               Container(
                 alignment: Alignment.center,
-                height: 40,
+                height: 34,
                 child: Text(
                   widget.skillName,
                   style: TextStyle(

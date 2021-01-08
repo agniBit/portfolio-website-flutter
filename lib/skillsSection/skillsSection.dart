@@ -31,28 +31,28 @@ class Skills extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: [
               SkillCard(
-                iconBgColor: Colors.yellow[100],
+                iconBgColor: Colors.white,
                 skillName: 'Machine Learning',
                 skillLevel: .9,
-                bgColor: Colors.lightGreen,
-                percentIndicatorColor: Colors.deepOrange,
-                imageName: 'assets/images/github.png',
+                bgColor: Colors.blueAccent[100],
+                percentIndicatorColor: Colors.white38,
+                imageName: 'assets/images/ML.png',
               ),
               SkillCard(
-                iconBgColor: Colors.yellow[100],
+                iconBgColor: Colors.white,
                 skillName: 'Flutter Android/ios\napp development',
                 skillLevel: .8,
-                bgColor: Colors.lightGreen,
-                percentIndicatorColor: Colors.deepOrange,
-                imageName: 'assets/images/github.png',
+                bgColor: Colors.redAccent[100],
+                percentIndicatorColor: Colors.white38,
+                imageName: 'assets/images/flutterIcon.png',
               ),
               SkillCard(
-                iconBgColor: Colors.yellow[100],
+                iconBgColor: Colors.white,
                 skillName: 'NLP',
                 skillLevel: .8,
-                bgColor: Colors.lightGreen,
-                percentIndicatorColor: Colors.deepOrange,
-                imageName: 'assets/images/github.png',
+                bgColor: Colors.lime,
+                percentIndicatorColor: Colors.white38,
+                imageName: 'assets/images/NLP.png',
               ),
             ],
           ),
@@ -60,28 +60,28 @@ class Skills extends StatelessWidget {
             direction: Axis.horizontal,
             children: [
               SkillCard(
-                iconBgColor: Colors.yellow[100],
+                iconBgColor: Colors.white,
                 skillName: 'ReactJS Web Development',
                 skillLevel: .9,
-                bgColor: Colors.lightGreen,
-                percentIndicatorColor: Colors.deepOrange,
-                imageName: 'assets/images/github.png',
+                bgColor: Colors.orange[300],
+                percentIndicatorColor: Colors.white38,
+                imageName: 'assets/images/reactJS.png',
               ),
               SkillCard(
-                iconBgColor: Colors.yellow[100],
+                iconBgColor: Colors.white,
                 skillName: 'NodeJS & Express\nBackend Development',
                 skillLevel: .9,
-                bgColor: Colors.lightGreen,
-                percentIndicatorColor: Colors.deepOrange,
-                imageName: 'assets/images/github.png',
+                bgColor: Colors.yellow[200],
+                percentIndicatorColor: Colors.white38,
+                imageName: 'assets/images/nodeJS.png',
               ),
               SkillCard(
-                iconBgColor: Colors.yellow[100],
+                iconBgColor: Colors.white,
                 skillName: 'GTK+3 cross platform\napp development',
                 skillLevel: .9,
-                bgColor: Colors.lightGreen,
-                percentIndicatorColor: Colors.deepOrange,
-                imageName: 'assets/images/github.png',
+                bgColor: Colors.purple[100],
+                percentIndicatorColor: Colors.white38,
+                imageName: 'assets/images/gtkIcon.png',
               ),
             ],
           )
@@ -90,3 +90,22 @@ class Skills extends StatelessWidget {
     );
   }
 }
+
+/*
+ #06beb6
+→ 
+#48b1bf 
+
+#1c92d2
+→ 
+#f2fcfe 
+
+
+#36d1dc
+→ 
+#5b86e5 
+
+
+
+
+*/
