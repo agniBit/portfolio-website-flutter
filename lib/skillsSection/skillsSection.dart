@@ -26,9 +26,10 @@ class Skills extends StatelessWidget {
           SizedBox(
             height: 40,
           ),
-          Flex(
-            direction: Axis.horizontal,
-            mainAxisSize: MainAxisSize.max,
+          Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 0,
+            runSpacing: 0,
             children: [
               SkillCard(
                 iconBgColor: Colors.white,
@@ -54,11 +55,6 @@ class Skills extends StatelessWidget {
                 percentIndicatorColor: Colors.white38,
                 imageName: 'assets/images/NLP.png',
               ),
-            ],
-          ),
-          Flex(
-            direction: Axis.horizontal,
-            children: [
               SkillCard(
                 iconBgColor: Colors.white,
                 skillName: 'ReactJS Web Development',
@@ -84,7 +80,7 @@ class Skills extends StatelessWidget {
                 imageName: 'assets/images/gtkIcon.png',
               ),
             ],
-          )
+          ),
         ],
       ),
     );

@@ -37,61 +37,71 @@ class AnimatedAppBar extends StatelessWidget {
                   letterSpacing: 1),
             ),
           ),
-          actions: [
-            Container(
-              alignment: Alignment.center,
-              padding: EdgeInsets.symmetric(
-                horizontal: 15,
-              ),
-              child: Text(
-                'Home',
-                style: TextStyle(color: homeTween.value),
-              ),
-            ),
-            Container(
-              alignment: Alignment.center,
-              padding: EdgeInsets.symmetric(
-                horizontal: 15,
-              ),
-              child: Text(
-                'About Me',
-                style: TextStyle(color: homeTween.value),
-              ),
-            ),
-            Container(
-              alignment: Alignment.center,
-              padding: EdgeInsets.symmetric(
-                horizontal: 15,
-              ),
-              child: Text(
-                'My Skills',
-                style: TextStyle(color: homeTween.value),
-              ),
-            ),
-            Container(
-              alignment: Alignment.center,
-              padding: EdgeInsets.symmetric(
-                horizontal: 15,
-              ),
-              child: Text(
-                'Projects',
-                style: TextStyle(color: homeTween.value),
-              ),
-            ),
-            Container(
-              alignment: Alignment.center,
-              padding: EdgeInsets.symmetric(
-                horizontal: 15,
-              ),
-              child: Text(
-                'Contact Me',
-                style: TextStyle(color: homeTween.value),
-              ),
-            ),
-            SizedBox(
-              width: mQ.width * .1,
-            ),
-          ],
+          actions: (mQ.width >= 768)
+              ? [
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 15,
+                    ),
+                    child: Text(
+                      'Home',
+                      style: TextStyle(color: homeTween.value),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 15,
+                    ),
+                    child: Text(
+                      'About Me',
+                      style: TextStyle(color: homeTween.value),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 15,
+                    ),
+                    child: Text(
+                      'My Skills',
+                      style: TextStyle(color: homeTween.value),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 15,
+                    ),
+                    child: Text(
+                      'Projects',
+                      style: TextStyle(color: homeTween.value),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 15,
+                    ),
+                    child: Text(
+                      'Contact Me',
+                      style: TextStyle(color: homeTween.value),
+                    ),
+                  ),
+                  SizedBox(
+                    width: mQ.width * .1,
+                  ),
+                ]
+              : [
+                  Icon(
+                    Icons.menu,
+                    color: homeTween.value,
+                  ),
+                  SizedBox(
+                    width: mQ.width * .1,
+                  ),
+                ],
         ),
       ),
     );

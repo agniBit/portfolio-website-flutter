@@ -33,15 +33,39 @@ class _ProjectCardState extends State<ProjectCard> {
   @override
   Widget build(BuildContext context) {
     var mQ = MediaQuery.of(context).size;
+    double _aspectratio;
+    double width = MediaQuery.of(context).size.width;
     double _width;
-    if (MediaQuery.of(context).size.width >= 940) {
+    int _breakPoint = 600;
+    if (width >= 900) {
       setState(() {
-        _width = MediaQuery.of(context).size.width * .39;
+        _width = width * .39;
       });
     } else {
       setState(() {
-        _width = MediaQuery.of(context).size.width * .8;
+        _width = width * .79;
       });
+    }
+    if (width <= 530) {
+      setState(() {
+        _aspectratio = .6;
+      });
+    } else {
+      if (width <= 600) {
+        setState(() {
+          _aspectratio = .8;
+        });
+      } else {
+        if (width <= 768) {
+          setState(() {
+            _aspectratio = 2.1;
+          });
+        } else {
+          setState(() {
+            _aspectratio = 2.2;
+          });
+        }
+      }
     }
     BoxFit fit;
     // ignore: unrelated_type_equality_checks
@@ -62,8 +86,9 @@ class _ProjectCardState extends State<ProjectCard> {
         },
         hoverColor: Colors.transparent,
         child: AspectRatio(
-          aspectRatio: 1.8,
+          aspectRatio: _aspectratio,
           child: AnimatedContainer(
+            width: _width,
             duration: Duration(
               milliseconds: 100,
             ),
@@ -83,10 +108,11 @@ class _ProjectCardState extends State<ProjectCard> {
             child: Stack(
               children: [
                 Flex(
-                  direction: Axis.horizontal,
+                  direction:
+                      (width <= _breakPoint) ? Axis.vertical : Axis.horizontal,
                   children: [
                     Expanded(
-                      flex: 2,
+                      flex: (width <= _breakPoint) ? 3 : 2,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Container(
@@ -101,7 +127,7 @@ class _ProjectCardState extends State<ProjectCard> {
                       ),
                     ),
                     Expanded(
-                      flex: 3,
+                      flex: (width <= _breakPoint) ? 2 : 3,
                       child: Container(
                         padding: EdgeInsets.all(20),
                         alignment: Alignment.center,
@@ -115,23 +141,19 @@ class _ProjectCardState extends State<ProjectCard> {
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 20,
+                                fontSize: (width <= 448) ? 16 : 20,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             SizedBox(
-                              height: 20,
+                              height: (width <= 448) ? 10 : 20,
                             ),
-                            SingleChildScrollView(
-                              child: Container(
-                                child: Text(
-                                  widget.descriptionPoints,
-                                  textAlign: TextAlign.justify,
-                                  style: GoogleFonts.exo2(
-                                    fontSize: 14,
-                                    color: Colors.black,
-                                  ),
-                                ),
+                            Text(
+                              widget.descriptionPoints,
+                              textAlign: TextAlign.justify,
+                              style: GoogleFonts.exo2(
+                                fontSize: (width <= 448) ? 12 : 14,
+                                color: Colors.black,
                               ),
                             ),
                           ],

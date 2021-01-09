@@ -30,13 +30,20 @@ class ContactMe extends StatelessWidget {
           ),
           Container(
             child: Flex(
-              direction: Axis.horizontal,
+              direction: (mQ.width <= 768) ? Axis.vertical : Axis.horizontal,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
-                  flex: 2,
-                  child: Image.asset('assets/images/contact_icon.png'),
+                  flex: (mQ.width <= 768) ? 0 : 2,
+                  child: Container(
+                    padding: EdgeInsets.all((mQ.width <= 768) ? 20 : 30),
+                    child: Image.asset('assets/images/contact_icon.png'),
+                  ),
                 ),
+                if (mQ.width <= 768)
+                  SizedBox(
+                    height: 25,
+                  ),
                 ContactForm(),
               ],
             ),

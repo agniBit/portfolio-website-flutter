@@ -4,6 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 class AboutMe extends StatelessWidget {
   const AboutMe({Key key}) : super(key: key);
 
+  bool isSmall(double width) {
+    if (width <= 768)
+      return true;
+    else
+      return false;
+  }
+
   @override
   Widget build(BuildContext context) {
     var mQ = MediaQuery.of(context).size;
@@ -29,13 +36,13 @@ class AboutMe extends StatelessWidget {
               ),
             ),
             Flex(
-              direction: Axis.horizontal,
+              direction: isSmall(mQ.width) ? Axis.vertical : Axis.horizontal,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Expanded(
-                  flex: 2,
+                  flex: isSmall(mQ.width) ? 0 : 2,
                   child: Container(
                     height: 350,
                     padding: EdgeInsets.all(20),
@@ -46,7 +53,7 @@ class AboutMe extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: isSmall(mQ.width) ? 0 : 3,
                   child: Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(20),

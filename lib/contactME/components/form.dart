@@ -6,11 +6,12 @@ class ContactForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String name = '';
+    double width = MediaQuery.of(context).size.width;
     return Expanded(
-      flex: 3,
+      flex: (width <= 768) ? 0 : 3,
       child: Container(
-        margin: EdgeInsets.all(20),
-        padding: EdgeInsets.all(40),
+        margin: EdgeInsets.all((width <= 768)?10:20),
+        padding: EdgeInsets.all((width <= 768)?15:40),
         decoration: BoxDecoration(
           color: Colors.lightGreen[200],
           borderRadius: BorderRadius.circular(20),
@@ -19,15 +20,24 @@ class ContactForm extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            InputTextField(hintText: 'Name',maxLines: 1,),
+            InputTextField(
+              hintText: 'Name',
+              maxLines: 1,
+            ),
             SizedBox(
               height: 20,
             ),
-            InputTextField(hintText: 'Email',maxLines: 1,),
+            InputTextField(
+              hintText: 'Email',
+              maxLines: 1,
+            ),
             SizedBox(
               height: 20,
             ),
-            InputTextField(hintText: 'Description',maxLines: 3,),
+            InputTextField(
+              hintText: 'Description',
+              maxLines: 3,
+            ),
             SizedBox(
               height: 20,
             ),
