@@ -40,7 +40,7 @@ class Projects extends StatelessWidget {
             height: 40,
           ),
           FutureBuilder<dynamic>(
-            future: lodaFromJsonFile(context, 'projectDetails.json'),
+            future: lodaFromJsonFile(context, 'assets/projectDetails.json'),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 List<Widget> projectWidgets = [];
@@ -48,7 +48,7 @@ class Projects extends StatelessWidget {
                 for (int i = 0; i < jsonData['projects'].length; i++) {
                   var jData = jsonData['projects'][i];
                   BoxFit fit;
-                  if (jData['fit']=='cover') {
+                  if (jData['fit'] == 'cover') {
                     fit = BoxFit.cover;
                   } else {
                     fit = BoxFit.contain;
@@ -58,7 +58,7 @@ class Projects extends StatelessWidget {
                       category: jData['category'],
                       date: jData['date'],
                       projectName: jData['projectName'],
-                      descriptionPoints: jData['descriptionPoints'].join(),
+                      descriptionPoints: jData['descriptionPoints'].join('.\n'),
                       mediaLink: jData['mediaLink'],
                       githubLink: jData['githubLink'],
                       imageFit: fit,
@@ -66,8 +66,10 @@ class Projects extends StatelessWidget {
                   );
                 }
                 return Wrap(
-                  alignment: WrapAlignment.center,
-                    spacing: 0, runSpacing: 0, children: projectWidgets);
+                    alignment: WrapAlignment.center,
+                    spacing: 0,
+                    runSpacing: 0,
+                    children: projectWidgets);
               } else {
                 return Container();
               }

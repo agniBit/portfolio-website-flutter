@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProjectCard extends StatefulWidget {
   ProjectCard({
@@ -79,37 +80,80 @@ class _ProjectCardState extends State<ProjectCard> {
                   ),
               ],
             ),
-            child: Flex(
-              direction: Axis.horizontal,
+            child: Stack(
               children: [
-                Expanded(
-                  flex: 2,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Container(
-                      height: double.infinity,
-                      width: double.infinity,
-                      color: Colors.orange,
-                      child: Image.asset(
-                        widget.mediaLink,
-                        fit: fit,
+                Flex(
+                  direction: Axis.horizontal,
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Container(
+                          height: double.infinity,
+                          width: double.infinity,
+                          color: Colors.orange,
+                          child: Image.asset(
+                            widget.mediaLink,
+                            fit: fit,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        padding: EdgeInsets.all(20),
+                        alignment: Alignment.center,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              '${widget.projectName}',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            SingleChildScrollView(
+                              child: Container(
+                                child: Text(
+                                  widget.descriptionPoints,
+                                  textAlign: TextAlign.justify,
+                                  style: GoogleFonts.exo2(
+                                    fontSize: 14,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                Expanded(
-                  flex: 3,
+                Positioned(
+                  right: 0,
+                  bottom: 0,
                   child: Container(
-                    alignment: Alignment.center,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Text('Project Name: ${widget.projectName}'),
-                        Text('Project type: ${widget.category} '),
-                        // Text('Project decription: ${widget.descriptionPoints}'),
-                      ],
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
+                      ),
+                    ),
+                    child: Text(
+                      widget.category,
                     ),
                   ),
                 ),

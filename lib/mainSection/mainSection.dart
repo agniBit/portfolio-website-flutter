@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MainSection extends StatelessWidget {
   const MainSection({Key key}) : super(key: key);
@@ -10,8 +11,16 @@ class MainSection extends StatelessWidget {
       height: mQ.height,
       width: mQ.width,
       decoration: BoxDecoration(
+        // gradient: LinearGradient(
+        //       begin: Alignment.topRight,
+        //       end: Alignment.bottomLeft,
+        //       colors: [
+        //         Color(1064),
+        //         Color(20114)
+        //       ],
+        // ),
         image: DecorationImage(
-          image: AssetImage("assets/images/bg.jpg"),
+          image: AssetImage("assets/images/bg2.jpeg"),
           fit: BoxFit.cover,
         ),
       ),
@@ -35,23 +44,30 @@ class MainSection extends StatelessWidget {
               children: [
                 Text(
                   'Hello, my name is',
-                  style: TextStyle(
+                  style: GoogleFonts.vollkorn(
                     fontSize: 30,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 15,),
+                SizedBox(
+                  height: 15,
+                ),
                 Text(
                   "Abhishek Agnihotri",
-                  style: TextStyle(
-                    fontSize: 60,
-                    color: Colors.white,
-                  ),
+                  style: GoogleFonts.yatraOne(fontSize: 60,color: Colors.white,),
+                      // GoogleFonts (
+                      //   fontSize: 60, 
+                      //   color: Colors.white,
+                      //   fontWeight: FontWeight.bold,
+                      //   fontStyle: FontStyle.italic,
+                      // ),
                 ),
-                SizedBox(height: 15,),
+                SizedBox(
+                  height: 15,
+                ),
                 Text(
                   "And i'm machine learning and flutter developer",
-                  style: TextStyle(
+                  style: GoogleFonts.vollkorn(
                     fontSize: 30,
                     color: Colors.white,
                   ),

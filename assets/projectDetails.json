@@ -45,7 +45,6 @@
             "projectName":"FACIAL LANDMARK DETECTION",
             "descriptionPoints":[
                 "Detecting 21 key landmarks on the face and tracking them",
-                "We can further extend our application to apply digital makeup, widgets, masks and so on",
                 "implement idea of HRnet and Inception net and train our model on AFLW (Annotated Facial Landmarks in the Wild) dataset"
             ],
             "mediaLink":"assets/images/FLD.gif",
