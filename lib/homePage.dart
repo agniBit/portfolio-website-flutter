@@ -99,7 +99,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           openMenuHandler();
           _scrollToIndex(scrollIndex);
         }),
-        child: Text(text),
+        child: Text(
+          text,
+          style: TextStyle(
+            color: Colors.black87,
+          ),
+        ),
       ),
     );
   }
@@ -141,12 +146,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               color: Colors.white,
               height: mQ.height,
               width: mQ.width,
+              padding: EdgeInsets.symmetric(horizontal: mQ.width * .1),
               child: Column(children: [
                 Container(
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text('Menu'),
                       IconButton(
                         onPressed: openMenuHandler,
                         icon: Icon(
@@ -167,6 +172,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       navLinks('Skills', 2),
                       navLinks('Projects', 3),
                       navLinks('Contact Me', 4),
+                      SizedBox(
+                        height: 50,
+                      ),
                     ],
                   ),
                 )

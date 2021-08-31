@@ -58,12 +58,9 @@ class AboutMe extends StatelessWidget {
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(20),
                     child: Text(
-                      "I'm from kannauj,U.P.,India. I have done" +
-                          " B.Tech in CSE from Jaypee Institute of infomation technology, Noida and my intermediate schooling from BNSD, Kanpur." +
-                          " Machine learning, Data Structures & Algorithms has lean my field of interest and i have gained decent command on languagea like Python, C, C++, C#, Dart, Javascript and knowledge of flutter App development and web development using ReactJS and hand on experiance on machine learning." +
-                          "\nApart from my technical skills i have a kean interest in exploring new technologies in automobile and e-sports" +
-                          " As a fresher, I'm ready to take any opportunity, to start mt career with, and to enhance my technical and interpersonal skills" +
-                          " i think one of my strongest strength is my patience i don't easily loose my calm , I am an optimestic and and an quick learner.",
+                      "I am a Machine Learning enthusiast and MERN stack developer who enjoys connecting the dots: be it ideas from different disciplines, people from different teams, or applications from different industries. I have strong technical skills and an academic background in Engineering, Statistics, and Machine Learning." +
+                          "My passion lies in solving problems, develop optimised applications using complex algorithms and data structures. I am able to jump across verticals to deliver high-performing ML/Dl solutions. I love learning new things and automating my day to day work using Programming." +
+                          "If you catch me outside of work, I'm a big eSports and an avid lover of music!",
                       textAlign: TextAlign.justify,
                       style: GoogleFonts.exo2(
                         fontSize: 16,

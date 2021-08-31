@@ -11,14 +11,6 @@ class MainSection extends StatelessWidget {
       height: mQ.height,
       width: mQ.width,
       decoration: BoxDecoration(
-        // gradient: LinearGradient(
-        //       begin: Alignment.topRight,
-        //       end: Alignment.bottomLeft,
-        //       colors: [
-        //         Color(1064),
-        //         Color(20114)
-        //       ],
-        // ),
         image: DecorationImage(
           image: AssetImage("assets/images/bg2.jpeg"),
           fit: BoxFit.cover,
@@ -32,7 +24,7 @@ class MainSection extends StatelessWidget {
             child: Image.asset(
               'assets/images/pic_0.png',
               fit: BoxFit.cover,
-              height: mQ.height * .85,
+              height: mQ.height * .80,
             ),
           ),
           Container(
@@ -45,7 +37,7 @@ class MainSection extends StatelessWidget {
                 Text(
                   'Hello, my name is',
                   style: GoogleFonts.vollkorn(
-                    fontSize: 30,
+                    fontSize: 22,
                     color: Colors.white,
                   ),
                 ),
@@ -54,21 +46,18 @@ class MainSection extends StatelessWidget {
                 ),
                 Text(
                   "Abhishek Agnihotri",
-                  style: GoogleFonts.yatraOne(fontSize: 60,color: Colors.white,),
-                      // GoogleFonts (
-                      //   fontSize: 60, 
-                      //   color: Colors.white,
-                      //   fontWeight: FontWeight.bold,
-                      //   fontStyle: FontStyle.italic,
-                      // ),
+                  style: GoogleFonts.yatraOne(
+                    fontSize: 40,
+                    color: Colors.white,
+                  ),
                 ),
                 SizedBox(
                   height: 15,
                 ),
                 Text(
-                  "And i'm machine learning and flutter developer",
+                  "And i'm Machine Learning enthusiast, MERN stack developer\nand learning Flutter development",
                   style: GoogleFonts.vollkorn(
-                    fontSize: 30,
+                    fontSize: 26,
                     color: Colors.white,
                   ),
                 ),
