@@ -16,6 +16,7 @@ dependencies:
   cupertino_icons: ^1.0.1
   percent_indicator: "^2.1.7+2"
   google_fonts: ^1.1.1
+  scroll_to_index: ^2.0.0
 
 
 dev_dependencies:

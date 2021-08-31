@@ -3,18 +3,35 @@ import 'package:flutter/material.dart';
 class AnimatedAppBar extends StatelessWidget {
   final AnimationController colorAnimationController;
   final Animation colorTween, homeTween, workOutTween, iconTween, drawerTween;
-  final Function onPressed;
+  final Function scroollHandler, openMenu;
 
   AnimatedAppBar({
     Key key,
     @required this.colorAnimationController,
     @required this.drawerTween,
-    @required this.onPressed,
+    this.openMenu,
     this.colorTween,
     this.homeTween,
     this.workOutTween,
     this.iconTween,
+    Future Function(int index) this.scroollHandler,
   }) : super(key: key);
+
+  Widget navLinks(String text, int scrollIndex) {
+    return Container(
+      alignment: Alignment.center,
+      padding: EdgeInsets.symmetric(
+        horizontal: 15,
+      ),
+      child: TextButton(
+        onPressed: (() => scroollHandler(scrollIndex)),
+        child: Text(
+          text,
+          style: TextStyle(color: homeTween.value),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,64 +56,25 @@ class AnimatedAppBar extends StatelessWidget {
           ),
           actions: (mQ.width >= 768)
               ? [
-                  Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 15,
-                    ),
-                    child: Text(
-                      'Home',
-                      style: TextStyle(color: homeTween.value),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 15,
-                    ),
-                    child: Text(
-                      'About Me',
-                      style: TextStyle(color: homeTween.value),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 15,
-                    ),
-                    child: Text(
-                      'My Skills',
-                      style: TextStyle(color: homeTween.value),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 15,
-                    ),
-                    child: Text(
-                      'Projects',
-                      style: TextStyle(color: homeTween.value),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 15,
-                    ),
-                    child: Text(
-                      'Contact Me',
-                      style: TextStyle(color: homeTween.value),
-                    ),
-                  ),
+                  navLinks('Home', 0),
+                  navLinks('About Me', 1),
+                  navLinks('Skills', 2),
+                  navLinks('Projects', 3),
+                  navLinks('Contact Me', 4),
                   SizedBox(
                     width: mQ.width * .1,
                   ),
                 ]
               : [
-                  Icon(
-                    Icons.menu,
-                    color: homeTween.value,
+                  IconButton(
+                    icon: Icon(
+                      Icons.menu,
+                      color: homeTween.value,
+                    ),
+                    color: Colors.brown,
+                    onPressed: (() {
+                      openMenu();
+                    }),
                   ),
                   SizedBox(
                     width: mQ.width * .1,
