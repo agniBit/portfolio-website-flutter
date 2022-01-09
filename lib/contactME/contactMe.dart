@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:portfolio/contactME/components/form.dart';
 
 class ContactMe extends StatelessWidget {
@@ -37,7 +38,7 @@ class ContactMe extends StatelessWidget {
                   flex: (mQ.width <= 768) ? 0 : 2,
                   child: Container(
                     padding: EdgeInsets.all((mQ.width <= 768) ? 20 : 30),
-                    child: Image.asset('assets/images/contact_icon.png'),
+                    child: Lottie.asset('assets/contact.json'),
                   ),
                 ),
                 if (mQ.width <= 768)
